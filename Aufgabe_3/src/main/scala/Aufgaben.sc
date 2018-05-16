@@ -5,14 +5,14 @@ println(qs(235))
 
 
 
-//fibonacci number for x
-def fibo(x:Int, first:Int=0, second:Int=1):Int = {
+//fibonacci number for x (fib is for x+1)
+def fibo(x:BigInt, first:BigInt=0, second:BigInt=1):BigInt = {
   if(x<2) 1
   else first + fibo(x-1, second, second+first)
 }
-def fib(n:Int):Int = if(n<2) 1 else fib(n-1)+fib(n-2)
-fib(4)
-fibo(4)
+//def fib(n:BigInt):BigInt = if(n<=2) 1 else fib(n-1)+fib(n-2)
+
+fibo(100)
 
 
 
@@ -42,8 +42,9 @@ def isPrim(x:Int, y:Int=2):Int={
 }
 //add every primenumber up to 200
 def primSum(x:Int=1, y:Int=0):Int={
-if(x==200)y
-else y + primSum(x+1,isPrim(x))
+  if(x==200)y
+  else y + primSum(x+1,isPrim(x))
 }
 
 primSum()
+
